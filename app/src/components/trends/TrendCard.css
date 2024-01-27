@@ -1,0 +1,13 @@
+.active-trend-card {
+    margin-top: 20px; 
+    width: 80%; 
+    height: auto; 
+    background-color: #F2A000; 
+}
+
+.inactive-trend-card {
+    margin-top: 20px; 
+    width: 80%; 
+    height: auto; 
+    background-color: #99B5CB; 
+}

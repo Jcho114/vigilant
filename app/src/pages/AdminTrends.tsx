@@ -1,6 +1,6 @@
 import Map from '../components/Map'
 import AdminNavBar from '../components/AdminNavBar'
-import SideBar from '../components/SideBar'
+import SideBar from '../components/trends/SideBar'
 
 const AdminTrends = () => {
   return (
