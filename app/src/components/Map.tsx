@@ -9,6 +9,7 @@ const Map = ({ name }: { name: string }) => {
         className={name}
         center={[49, 31]}
         zoom={5.5}
+        scrollWheelZoom={false}
       >
         <TileLayer 
           attribution='&copy; <a href="https://www.maptiler.com/">MapTiler</a>'
