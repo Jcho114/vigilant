@@ -1,5 +1,5 @@
 import Map from '../components/Map';
-import NavBar from '../components/NavBar';
+import CivilianNavBar from '../components/CivilianNavBar';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useQuery } from '@tanstack/react-query';
 import './Dashboard.css';
@@ -53,7 +53,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      <NavBar email={user ? String(user.email) : ""}/>
+      <CivilianNavBar email={user ? String(user.email) : ""}/>
       <div className="content">
         <SideBar />
         <Map name={"minimap"}/>
