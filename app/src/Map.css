@@ -1,0 +1,10 @@
+.map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mini-map {
+  height: 40rem;
+  width: 70rem;
+}
