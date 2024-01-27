@@ -1,6 +1,6 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import LogoutButton from './LogoutButton';
-import './NavBar.css';
+import './CivilianNavBar.css';
 import { useState } from 'react';
 
 const UserMenu = () => {
