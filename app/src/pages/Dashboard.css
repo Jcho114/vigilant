@@ -1,13 +1,22 @@
 .dashboard {
   width: 100vw;
-  min-height: 100vh;
   display: flex;
+  flex-direction: column;
+  margin: 0;
+  color: black;
+}
+
+.content {
+  width: 100vw;
+  display: flex;
+  margin: 0;
 }
 
 .minimap {
   position: absolute;
-  width: 80vw;
-  height: 90vh;
-  bottom: 0;
+  width: 80%;
+  height: calc(100vh - 8vh);
   right: 0;
+  margin: 0;
+  z-index: 1;
 }
