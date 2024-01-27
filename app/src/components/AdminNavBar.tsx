@@ -34,7 +34,7 @@ const NavBar = ({ email }: { email: string }) => {
         <h1>Reporting Service</h1>
       </div>
       <div>
-        Hello
+        
       </div>
       {userMenu ? <UserMenu /> : null}
       <div className="email" onClick={() => setUserMenu(!userMenu)}>
