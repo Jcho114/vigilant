@@ -1,9 +1,10 @@
+import Filter from './Filter';
 import './SideBar.css';
 
 const SideBar = () => {
   return (
     <div className="sidebar">
-      <p>Hello</p>
+      <Filter />
     </div>
   )
 }

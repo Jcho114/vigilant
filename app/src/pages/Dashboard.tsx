@@ -1,5 +1,6 @@
 import Map from '../components/Map';
 import CivilianNavBar from '../components/CivilianNavBar';
+import ReportForm from '../components/ReportForm';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useQuery } from '@tanstack/react-query';
 import './Dashboard.css';
@@ -57,6 +58,7 @@ const Dashboard = () => {
       <div className="content">
         <SideBar />
         <Map name={"minimap"}/>
+        <ReportForm />
       </div>
     </div>
   )
