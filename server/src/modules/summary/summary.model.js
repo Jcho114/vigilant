@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 
 // creating schema
 const summarySchema = new mongoose.Schema({
-    summary_id: String,
-    reports: [String],
+    summary_id: mongoose.Schema.Types.UUID,
+    reports: [mongoose.Schema.Types.UUID],
     latitude: Number,
     longitude: Number,
     amount: Number,
