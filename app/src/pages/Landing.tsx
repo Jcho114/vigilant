@@ -8,9 +8,21 @@ function App() {
 
   return (
     <div className="landing">
-      <h1>Vigilant</h1>
+      <div className="topnav">
+        <div className="topnav-left">
+          <a href="#home">Vigilant | Wartime Civilian Reporting Services</a>
+        </div>
+
+        <div className="topnav-right">
+          <a href="#signup">Sign up</a>
+          <a href="#signin">Sign in</a>
+          <a href="#support">Support</a>
+        </div>
+      </div>
+
       {!isAuthenticated ? <LoginButton /> : null}
     </div>
+    
   )
 }
 
