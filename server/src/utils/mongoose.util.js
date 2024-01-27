@@ -2,14 +2,11 @@ const mongoose = require("mongoose");
 
 require("dotenv").config();
 const {
-    MONGO_USERNAME,
-    MONGO_PASSWORD,
-    MONGO_CLUSTER,
-    MONGO_DATABASE,
+    MONGO_URI
 } = process.env;
 
 async function connect() {
-    return await mongoose.connect(`mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_CLUSTER}.4qgzzy5.mongodb.net/${MONGO_DATABASE}?retryWrites=true&w=majority`);
+    return await mongoose.connect(MONGO_URI);
 }
 
 async function disconnect() {
