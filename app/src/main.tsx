@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import Demo from './Demo.tsx';
+import Map from './Map.tsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Auth0Provider } from '@auth0/auth0-react';
@@ -21,6 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Routes>
             <Route path="/" element={<App/>} />
             <Route path="/callback" element={<Demo />} />
+            <Route path="/map" element={<Map />} />
           </Routes>
       </BrowserRouter>
     </QueryClientProvider>
