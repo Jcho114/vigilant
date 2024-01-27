@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 // creating schema
 const reportSchema = new mongoose.Schema({
-    report_id: String,
+    report_id: mongoose.Schema.Types.UUID,
     validation: Boolean,
     latitude: Number,
     longitude: Number,
