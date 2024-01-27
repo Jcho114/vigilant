@@ -15,14 +15,14 @@ def polynomial_regression(coords):
     
     c = P.polyfit(coords[0], coords[1], m, full=False)
 
-    print(str(coords))
-    print(f"Coefficients: {c}")
+    # print(str(coords))
+    # print(f"Coefficients: {c}")
 
     new_coords = []
     start_i = min(coords[0])
     end_i = max(coords[0])
 
-    print(f"{start_i}, {end_i}")
+    # print(f"{start_i}, {end_i}")
     
     for x in np.arange(start_i, end_i, 0.1):
         y = calculate_new_y(c, x)
@@ -96,15 +96,15 @@ def linear_regression(coords, times, time):
     velocity_y = (slope / pow(1 + (pow(slope, 2)), (1/2))) * speed
     velocity = [velocity_x, velocity_y]
 
-    print(f"Slope: {slope}")
-    print(f"Speed: {speed}")
-    print(f"Velocity vector: {velocity}")
+    # print(f"Slope: {slope}")
+    # print(f"Speed: {speed}")
+    # print(f"Velocity vector: {velocity}")
 
     predicted_x_pos = end_x + (velocity_x * (time - times[times_len - 1]))
     predicted_y_pos = end_y + (velocity_y * (time - times[times_len - 1]))
     
-    print(f"Predicted x: {predicted_x_pos}")
-    print(f"Predicted y: {predicted_y_pos}")
+    # print(f"Predicted x: {predicted_x_pos}")
+    # print(f"Predicted y: {predicted_y_pos}")
 
     return [predicted_x_pos, predicted_y_pos]
 
@@ -121,9 +121,8 @@ def main():
     print(str(coords))
     linear_regression(coords, times, 500)
     coords = polynomial_regression([x, y])
-    print(f"New coords: {coords}")
+    # print(f"New coords: {coords}")
     
-
 
 if __name__ == "__main__":
     main()
