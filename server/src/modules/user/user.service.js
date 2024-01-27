@@ -5,7 +5,10 @@ const getUsers = async query => {
 }
 
 const addUser = async body => {
-    let user = await User.findOne(body);
+    let user = await User.findOne({
+        user_id: body.user_id
+    });
+    console.log(user);
     if (user) {
         throw new Error("user already exists");
     }

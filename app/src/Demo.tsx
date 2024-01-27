@@ -1,13 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { useQuery } from "@tanstack/react-query";
-
-function LogoutButton() {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { logout }: any = useAuth0();
-  return <button onClick={() => logout({
-    logoutParams: { returnTo: window.location.origin }
-  })}>Log Out</button>
-}
+import LogoutButton from "./components/LogoutButton";
 
 const Demo = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
