@@ -18,6 +18,7 @@ const addUser = async (req, res) => {
         res.status(400).json({
             "message": "user already exists"
         });
+        console.error(error);
     }
 }
 
