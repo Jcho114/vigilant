@@ -1,6 +1,9 @@
 .reportformcontainer {
-  width: 25%;
-  height: 40%;
+  width: 22%;
+  height: 70%;
+  position: fixed;
+  bottom: 3rem;
+  right: 0rem;
   z-index: 2;
 }
 
@@ -22,6 +25,7 @@
   border-top-left-radius: inherit;
   text-align: center;
   font-size: 0.65rem;
+  padding: 0.3rem 0;
 }
 
 .reportform .infotype {
@@ -48,4 +52,24 @@
 .reportform .reports h1 {
   font-size: 1rem;
   margin: 0 1rem;
+}
+
+.reportform .tank,
+.reportform .infantry,
+.reportform .helicopter,
+.reportform .plane {
+  display: flex;
+}
+
+.reportform .amounts {
+  margin-left: auto;
+  margin-right: 5%;
+}
+
+.reportform input[type="checkbox"] {
+  margin-right: 1rem;
+}
+
+.reportform input[type="number"] {
+  width: 4rem;
 }

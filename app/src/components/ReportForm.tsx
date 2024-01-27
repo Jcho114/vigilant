@@ -19,17 +19,33 @@ const ReportForm = () => {
           </table>
         </div>
         <div className="reports">
-          <div>
+          <div className="tank">
             <h1>Armor / Tanks</h1>
+            <div className="amounts">
+              <input type="checkbox" />
+              # <input type="number" min={0}/>
+            </div>
           </div>
-          <div>
+          <div className="infantry">
             <h1>Infantry</h1>
+            <div className="amounts">
+              <input type="checkbox" />
+              # <input type="number" min={0}/>
+            </div>
           </div>
-          <div>
+          <div className="helicopter">
             <h1>Helicopter</h1>
+            <div className="amounts">
+              <input type="checkbox" />
+              # <input type="number" min={0}/>
+            </div>
           </div>
-          <div>
+          <div className="plane">
             <h1>Plane</h1>
+            <div className="amounts">
+              <input type="checkbox" />
+              # <input type="number" min={0}/>
+            </div>
           </div>
         </div>
       </div>
