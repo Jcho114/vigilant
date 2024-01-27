@@ -51,10 +51,13 @@ const Dashboard = () => {
   if (error) return `Error: ${error}`;
 
   return (
-    <div className="dashboard">
-      <p>{user ? user.sub : null}</p>
-      <Map name={"minimap"}/>
-    </div>
+    <>
+      <NavBar />
+      <div className="dashboard">
+        <p>{user ? user.sub : null}</p>
+        <Map name={"minimap"}/>
+      </div>
+    </>
   )
 }
 
