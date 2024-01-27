@@ -7,7 +7,6 @@ const {
 
 // mocking summarys model in database
 const summary = require("../../../src/modules/summary/summary.model");
-jest.mock("../../../src/modules/summary/summary.model");
 
 // stubbing: creating mock data
 const request = {
