@@ -3,6 +3,7 @@ import NavBar from '../components/NavBar';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useQuery } from '@tanstack/react-query';
 import './Dashboard.css';
+import SideBar from '../components/SideBar';
 
 const Dashboard = () => {
   const { isLoading, isAuthenticated, user, getAccessTokenSilently } = useAuth0();
@@ -15,7 +16,7 @@ const Dashboard = () => {
           audience: import.meta.env.VITE_REACT_APP_AUTH0_API_AUDIENCE
         }
       });
-      const users = await fetch(`${import.meta.env.VITE_REACT_APP_API_SERVER_URL}/api/v1/user?user_id=${user ? user.sub : null}`, {
+      const users = await fetch(`${import.meta.env.VITE_REACT_APP_API_SERVER_URL}/api/v1/user?user_id=${user?.sub}`, {
         headers: {
           Authorization: `Bearer ${accessToken}`
         }
@@ -51,13 +52,13 @@ const Dashboard = () => {
   if (error) return `Error: ${error}`;
 
   return (
-    <>
-      <NavBar />
-      <div className="dashboard">
-        <p>{user ? user.sub : null}</p>
+    <div className="dashboard">
+      <NavBar email={user ? String(user.email) : ""}/>
+      <div className="content">
+        <SideBar />
         <Map name={"minimap"}/>
       </div>
-    </>
+    </div>
   )
 }
 
