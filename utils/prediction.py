@@ -1,6 +1,45 @@
+import numpy as np
+from numpy.polynomial import polynomial as P
 
 def polynomial_regression(coords):
-    return
+    """
+    https://medium.com/analytics-vidhya/understanding-polynomial-regression-5ac25b970e18 
+    http://polynomialregression.drque.net/math.html 
+
+    m is degree of polynomial
+    n is num of data points
+    """
+    max_degree = 4
+    n = len(coords[0])
+    m = n if n < max_degree else max_degree
+    
+    c = P.polyfit(coords[0], coords[1], m, full=False)
+
+    print(str(coords))
+    print(f"Coefficients: {c}")
+
+    new_coords = []
+    start_i = min(coords[0])
+    end_i = max(coords[0])
+
+    print(f"{start_i}, {end_i}")
+    
+    for x in np.arange(start_i, end_i, 0.1):
+        y = calculate_new_y(c, x)
+        new_coords.append([round(x, 4), round(y, 4)])
+
+    return new_coords
+
+def calculate_new_y(c, x):
+    # p(x) = c0 + c1x + c2x^2 + c3x^3 + c4x^4 + c5x^5
+    sum = 0
+    i = 0
+
+    for cef in c:
+        sum += cef * pow(x, i)
+        i += 1
+    
+    return sum
 
 
 def linear_regression(coords, times, time):
@@ -12,6 +51,7 @@ def linear_regression(coords, times, time):
     Least squares
 
     https://www.cuemath.com/data/least-squares/ 
+    https://statskingdom.com/linear-regression-calculator.html 
 
     m = (n∑xy - ∑y∑x)/n∑x^2 - (∑x)^2
     b = (∑y - m∑x)/n
@@ -80,6 +120,8 @@ def main():
 
     print(str(coords))
     linear_regression(coords, times, 500)
+    coords = polynomial_regression([x, y])
+    print(f"New coords: {coords}")
     
 
 
