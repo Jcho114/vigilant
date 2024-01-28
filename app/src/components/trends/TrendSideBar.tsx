@@ -1,9 +1,9 @@
-import './SideBar.css'
+import './TrendSideBar.css'
 import TrendCard from './TrendCard.tsx'
 
 import {useState} from 'react'
 
-const SideBar = () => {
+const TrendSideBar = () => {
 
   const [activeTrend, setActiveTrend] = useState("2")
 
@@ -29,4 +29,4 @@ const SideBar = () => {
   )
 }
 
-export default SideBar
+export default TrendSideBar
