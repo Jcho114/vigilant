@@ -1,6 +1,6 @@
 report_id, validation, latitude, longitude, type, tanks, infantry, helicopters, planes, date, description, image
-pwapslw, true, 51.229140, 34.332275, danger, 0, 1482, 0, 0, 2024-01-22 19:56:34.948827, weawea, ldcpawwe.png
-mzkwqols, true, 50.507743, 33.905072, danger, 0, 1112, 0, 0, 2024-01-23 20:31:41.421492, weajfw, iwaclfaw.png
-jwaeiqw, true, 50.671962, 32.991137, danger, 0, 1092, 0, 0, 2024-01-24 21:43:52.921842, kslaoda, waejvhavr.png
-ksafjiwa, true, 50.869556, 32.492065, danger, 0, 894, 0, 0, 2024-01-25 22:33:43.894713, walfos, ksavworaa.png
-jsadhujwc, true, 51.031031, 31.930346, danger, 0, 510, 0, 0, 2024-01-26 15:53:21.347182, zmanfa, sajcuawr.png 
+pwapslw, false, 51.229140, 34.332275, danger, 0, 1482, 0, 0, 2024-01-24 19:56:34.948827, weawea, ldcpawwe.png
+mzkwqols, false, 50.507743, 33.905072, danger, 0, 1112, 0, 0, 2024-01-25 20:31:41.421492, weajfw, iwaclfaw.png
+jwaeiqw, false, 50.671962, 32.991137, danger, 0, 1092, 0, 0, 2024-01-26 21:43:52.921842, kslaoda, waejvhavr.png
+ksafjiwa, false, 50.869556, 32.492065, danger, 0, 894, 0, 0, 2024-01-27 22:33:43.894713, walfos, ksavworaa.png
+jsadhujwc, false, 51.031031, 31.930346, danger, 0, 510, 0, 0, 2024-01-28 01:53:21.347182, zmanfa, sajcuawr.png 
