@@ -22,7 +22,23 @@ const addUser = async (req, res) => {
     }
 }
 
+// req should have user_id and report_id fields
+const addUserReport = async (req, res) => {
+    try {
+        await userService.updateUser(req.body);
+        // 200 = OK
+        res.status(200).json({
+            "message": "successfully updated report"
+        });
+    } catch (error) {
+        res.status(400).json({
+            "message": error.message
+        });
+    }
+}
+
 module.exports = {
     getUsers,
-    addUser
+    addUser,
+    addUserReport
 }

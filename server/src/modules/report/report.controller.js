@@ -6,9 +6,8 @@ const getReports = async (req, res) => {
 }
 
 const addReport = async (req, res) => {
-    let report;
     try {
-        report = await reportService.addReport(req.body);
+        const report = await reportService.addReport(req.body);
         // 201 = CREATED
         res.status(201).json({
             "message": "successfully added report",
