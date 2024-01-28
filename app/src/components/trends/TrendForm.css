@@ -1,9 +1,9 @@
 .trend-form-container {
-    width: 42%;
-    height: 25%;
+    width: 50%;
+    height: 30%;
     position: fixed;
-    bottom: 8rem;
-    left: 25rem;
+    bottom: 1.6rem;
+    left: 20rem;
     z-index: 2;
   }
   

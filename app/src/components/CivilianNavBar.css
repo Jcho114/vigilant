@@ -8,6 +8,13 @@
   color: white;
 }
 
+.misc-stuff {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-left: 2rem;
+}
+
 .navbar h1 {
   margin: 1rem;
   font-size: 2rem;
@@ -24,6 +31,7 @@
   flex-direction: column;
   gap: 1px;
   padding-left: 10px;
+  margin-right: 0.6rem;
 }
 
 .navbar .description h1 {

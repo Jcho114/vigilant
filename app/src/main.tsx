@@ -2,7 +2,6 @@ import ReactDOM from 'react-dom/client';
 import Landing from './pages/Landing.tsx';
 import Demo from './Demo.tsx';
 import Dashboard from './pages/Dashboard.tsx';
-import AdminDashboard from './pages/AdminDashboard.tsx';
 import AdminTrends from './pages/AdminTrends.tsx'
 import AdminReports from './components/AdminReports/AdminReports.tsx';
 import AdminWarfront from './pages/AdminWarfront.tsx';
@@ -27,7 +26,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             <Route path="/" element={<Landing />} />
             <Route path="/dashboard-test" element={<Demo />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/admin-dashboard" element = {<AdminDashboard />} />
             <Route path="/admin-dashboard/trends" element = {<AdminTrends/>} />
             <Route path="/admin-dashboard/reports" element={<AdminReports/>} />
             <Route path="/admin-dashboard/warfront" element={<AdminWarfront/>} />

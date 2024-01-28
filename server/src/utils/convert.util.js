@@ -22,7 +22,7 @@ function convertResultsToCorrectFormat(reports) {
     for (let i = 0; i < rep_len; i++) {
         lat_vals.push(reports[i]["latitude"]);
         long_vals.push(reports[i]["longitude"]);
-        times.push(convertDateToMinutes(reports[i]["date"]));
+        times_vals.push(convertDateToMinutes(reports[i]["date"]));
     }
 
     // Need to sort them (lat_vals, long_vals, and times_vals by the times here
@@ -45,9 +45,9 @@ function convertResultsToCorrectFormat(reports) {
     }
 
     for (let i = 0; i < rep_len; i++) {
-        x_coords += str(lat_vals[i]);
-        y_coords += str(long_vals[i]);
-        times += str(times_vals[i]);
+        x_coords += String(lat_vals[i]);
+        y_coords += String(long_vals[i]);
+        times += String(times_vals[i]);
 
         // End early, we don't want to add commas to the last value
         if (i == rep_len - 1) { 
@@ -83,3 +83,7 @@ function convertResultsToCorrectFormat(reports) {
 // convertDateToMinutes("2024-01-13 19:56:00.000000")
 // convertDateToMinutes("2023-09-25 23:21:21.23154")
 // convertDateToMinutes("2023-01-20 23:21:21.23154")
+
+module.exports = {
+    convertResultsToCorrectFormat
+}

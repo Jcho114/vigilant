@@ -1,0 +1,18 @@
+.admin-trends-slider {
+  margin-left: auto;
+  margin-right: 2.5rem;
+  margin-top: auto;
+  margin-bottom: 2rem;
+  width: 30%;
+  height: 5vh;
+  background-color: #001C32;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-trends-slider input[type="range"] {
+  margin-left: 1rem;
+  width: 58%;
+}

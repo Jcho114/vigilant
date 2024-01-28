@@ -13,14 +13,16 @@ const Filter = ({ setReports }: any) => {
   async function startFilter() {
     let url;
     if (startDate !== "" && startTime !== "" && endDate !== "" && endTime !== "") {
-      url = `${import.meta.env.VITE_REACT_APP_API_SERVER_URL}/api/v1/report?start=${startDate + startTime}&end=${endDate + endTime}&validation=${verified}`
+      url = `${import.meta.env.VITE_REACT_APP_API_SERVER_URL}/api/v1/report?start=${new Date(Date.parse(`${startDate} ${startTime}`)).toISOString()}&end=${new Date(Date.parse(`${endDate} ${endTime}`)).toISOString()}&validation=${verified}`
     } else {
       url = `${import.meta.env.VITE_REACT_APP_API_SERVER_URL}/api/v1/report?validation=${verified}`
     }
+    console.log(url);
     const reports = await fetch(url)
                             .then(res => res.json());
     setReports(reports);
   }
+
 
   return (
     <div className="filter">
@@ -38,12 +40,12 @@ const Filter = ({ setReports }: any) => {
         <h1>Start Date & Time</h1>
         <div className="timeline-ui">
           <input type="date" onChange={(e) => setStartDate(e.target.value)}/>
-          <input type="time" onChange={(e) => setStartTime(`T${e.target.value}:00`)}/>
+          <input type="time" onChange={(e) => setStartTime(e.target.value)}/>
         </div>
         <h1>End Date & Time</h1>
         <div className="timeline-ui">
           <input type="date" onChange={(e) => setEndDate(e.target.value)}/>
-          <input type="time" onChange={(e) => setEndTime(`T${e.target.value}:00`)}/>
+          <input type="time" onChange={(e) => setEndTime(e.target.value)}/>
         </div>
       </div>
       <div className="block status">

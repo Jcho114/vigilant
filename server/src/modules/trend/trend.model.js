@@ -2,7 +2,16 @@ const mongoose = require("mongoose");
 
 // creating schema
 const trendSchema = new mongoose.Schema({
-    reports: [String]
+    reports: [String],
+    date: Date,
+    startDate: Date,
+    endDate: Date,
+    startLat: Number,
+    startLong: Number,
+    endLat: Number,
+    endLong: Number,
+    predictionLat: Number,
+    predictionLong: Number
 });
 
 // compiling model
