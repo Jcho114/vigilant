@@ -1,4 +1,4 @@
-.sidebar {
+.admin-sidebar {
   display: flex;
   flex-direction: column;
   height: 92vh;
@@ -6,7 +6,7 @@
   justify-content: center;
   background-color: #001c32;
 }
-.sidebar-item {
+.admin-sidebar-item {
   background-color: #aaaaaa;
   color: #ffffff;
   padding-top: 10px;
@@ -15,7 +15,7 @@
   height: 10vh;
   border-radius: 10px;
 }
-.sidebar-item-active {
+.admin-sidebar-item-active {
   background-color: #3a4b58;
   color: #aaaaaa;
   padding-top: 10px;
