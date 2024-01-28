@@ -9,8 +9,9 @@ const ReportForm = ({clickedMarkers} : {clickedMarkers : any}) => {
   
   <div className="trend-form-container">
       <div className="trend-form-reportform">
-        <div className="trend-form-title">
-          <p>New Trend</p>
+        <div className = "trend-form-header">
+          <p className="trend-form-title">New Trend</p>
+          <div className="trend-form-submit">Submit</div>
         </div>
         
         <div className = "trend-form-scrollable-window">
