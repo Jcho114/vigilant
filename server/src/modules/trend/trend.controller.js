@@ -15,6 +15,7 @@ const addTrend = async (req, res) => {
             "new_trend": trend
         });
     } catch (error) {
+        console.error(error.message);
         res.status(400).json({
             "message": "trend already exists"
         });
@@ -22,7 +23,6 @@ const addTrend = async (req, res) => {
 }
 
 const removeTrend = async (req, res) => {
-    
 }
 
 module.exports = {

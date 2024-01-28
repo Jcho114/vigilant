@@ -1,7 +1,8 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask import request
 from flask_cors import CORS
 import prediction
+import sys
 
 app = Flask(__name__)
 CORS(app)
@@ -41,7 +42,7 @@ def linear_reg():
 
         coords.append(new_coord)
 
-    return prediction.linear_regression(coords, times, time)
+    return jsonify({"message": prediction.linear_regression(coords, times, time)})
 
 
 def string_list_to_float(string_num_list):

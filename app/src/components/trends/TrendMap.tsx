@@ -1,67 +1,38 @@
-import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet";
+import { MapContainer, Marker, TileLayer } from "react-leaflet";
 import "./TrendMap.css";
 import "leaflet/dist/leaflet.css";
 import { useEffect } from "react";
-import {useState} from 'react'; 
 
 import Leaflet from 'leaflet';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const GetCoords = ({ setLat, setLong }: any) => {
-  const map = useMap();
-
-  useEffect(() => {
-    map.on('click', (e) => {
-      const { lat, lng } = e.latlng;
-      setLat(lat);
-      setLong(lng);
-    })
-  }, [map, setLat, setLong]);
-
-  return null;
-}
-
 // add cluster or uninstall supercluster use-supercluster
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const AdminMap = ({ name, lat, setLat, long, setLong, clickedMarkers, setClickedMarkers}: any) => {
-
-  const [renderedMarkers, setRenderedMarkers] = useState([]); 
-
+const AdminMap = ({ markers, setMarkers, name, clickedMarkers, setClickedMarkers}: any) => {
   useEffect(() => {
     async function displayReports() {
-      const response = await fetch("http://localhost:3001/api/v1/report");
-      const reports = await response.json();
+      const reports = await fetch("http://localhost:3001/api/v1/report").then(res => res.json());
       console.log(reports);
-
-      let markers : any = []; 
-
-      for (let i = 0; i < reports.length; i++) {
-        markers.push(reports[i]); 
-      }
-
-      setRenderedMarkers(markers); 
-      
+      setMarkers(reports);  
     }
-
-    displayReports()
+    displayReports();
   }, []);
 
   const greyIcon = new Leaflet.Icon({
     iconUrl: "../../public/grey-icon.png",
     iconSize: [25, 40],
-  })
+  });
 
   const redIcon = new Leaflet.Icon({
     iconUrl: "../../public/red-icon.png",
     iconSize: [25, 40],
   });
 
-  const iconColor = (id : String) => {
+  const iconColor = (id : string) => {
     if (clickedMarkers.includes(id)) {
-      return redIcon; 
+      return redIcon;
     }
     else {
-      return greyIcon; 
+      return greyIcon;
     }
   }
 
@@ -77,30 +48,29 @@ const AdminMap = ({ name, lat, setLat, long, setLong, clickedMarkers, setClicked
           attribution='&copy; <a href="https://www.maptiler.com/">MapTiler</a>'
           url={`https://api.maptiler.com/maps/hybrid/{z}/{x}/{y}.jpg?key=${import.meta.env.VITE_REACT_APP_MAP_TILER_KEY}`}
         />
-        <GetCoords setLat={setLat} setLong={setLong} />
 
-        {renderedMarkers.map(
-            (data) => {
-              let lat = data[" latitude"];
-              let long = data[" longitude"];
-              let report_id = data["report_id"]; 
+        {markers.map(
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (data: any) => {
+              const lat = data["latitude"];
+              const long = data["longitude"];
+              const report_id = data["report_id"]; 
 
               return (
-                <Marker key = {report_id} position = {[lat, long]} 
-
-                icon = {iconColor(report_id)}
-                
-                eventHandlers = {{
-                  click: () => {
-                    if (clickedMarkers.includes(report_id)) {
-                      setClickedMarkers(clickedMarkers.filter((a : String) => a !== report_id));
+                <Marker 
+                  key = {report_id}
+                  position = {[lat, long]} 
+                  icon = {iconColor(report_id)}
+                  eventHandlers = {{
+                    click: () => {
+                      if (clickedMarkers.includes(report_id)) {
+                        setClickedMarkers(clickedMarkers.filter((a : string) => a !== report_id));
+                      }
+                      else {
+                        setClickedMarkers([...clickedMarkers, report_id])
+                      }
                     }
-                    else {
-                      setClickedMarkers([...clickedMarkers, report_id])
-                    }
-                  }
-                }}
-                
+                  }}
                 ></Marker>
               )
             })

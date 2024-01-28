@@ -1,5 +1,6 @@
 import numpy as np
 from numpy.polynomial import polynomial as P
+import sys
 
 def polynomial_regression(coords):
     """
@@ -62,9 +63,13 @@ def linear_regression(coords, times, time):
     collected data.
     """
 
+    print("coords:", str(coords), file=sys.stderr)
+    print("times:", str(times), file=sys.stderr)
+    print("time:", str(time), file=sys.stderr)
     coords_len = len(coords)
     times_len = len(times)
 
+    print(time, times, file=sys.stderr)
     # Doesn't make sense to try and predict the past
     if time < times[times_len - 1]:
         return []

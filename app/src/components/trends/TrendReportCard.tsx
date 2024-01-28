@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './TrendReportCard.css';
 
 const TrendReportCard = ({ report_id }: { report_id: string }) => {
@@ -8,7 +8,7 @@ const TrendReportCard = ({ report_id }: { report_id: string }) => {
     const fetchReport = async () => {
       try {
         const response = await fetch(`http://localhost:3001/api/v1/report?report_id=${report_id}`);
-        const reportData = (await response.json())[0][" longitude"];
+        const reportData = (await response.json())[0].report_id;
         console.log(reportData)
         setReport(reportData.toString());
       } catch (error) {
@@ -21,7 +21,7 @@ const TrendReportCard = ({ report_id }: { report_id: string }) => {
 
   return (
     <div className="trend-report-card">
-      <p className="trend-report-card-title">Report: {report !== null ? report : 'Loading...'}</p>
+      <p className="trend-report-card-title">Report: {report !== null ? report_id : 'Loading...'}</p>
     </div>
   );
 };
