@@ -1,3 +1,5 @@
+# Vigilant
+
 ## Inspiration
 We wanted to create an app that could provide access to accurate and current information on ongoing wars across the world. We were inspired by ongoing conflicts such as the Ukraine - Russian war, and hoped to empower civilians and government to work together and plan better against invading forces.
 
