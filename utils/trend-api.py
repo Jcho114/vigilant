@@ -1,10 +1,16 @@
 from flask import Flask
 from flask import request
+from flask_cors import CORS
 import prediction
 
 app = Flask(__name__)
+CORS(app)
 
 # flask --app trend-api run --port 3002
+
+
+# This will expose the flask server to all addresses
+# flask --app trend-api run --port 3002 --host=0.0.0.0
 
 
 @app.route("/")

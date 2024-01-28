@@ -6,8 +6,8 @@ function convertDateToMinutes(date) {
     return time;
 }
 
-convertDateToMinutes("2024-01-23 19:56:00.000000")
-convertDateToMinutes("2024-01-20 19:56:00.000000")
-convertDateToMinutes("2024-01-13 19:56:00.000000")
-convertDateToMinutes("2023-09-25 23:21:21.23154")
-convertDateToMinutes("2023-01-20 23:21:21.23154")
+// convertDateToMinutes("2024-01-23 19:56:00.000000")
+// convertDateToMinutes("2024-01-20 19:56:00.000000")
+// convertDateToMinutes("2024-01-13 19:56:00.000000")
+// convertDateToMinutes("2023-09-25 23:21:21.23154")
+// convertDateToMinutes("2023-01-20 23:21:21.23154")
