@@ -7,7 +7,7 @@ const SideBar = () => {
 
   const [activeTrend, setActiveTrend] = useState("2")
 
-  const trends = ["1", "2", "3", "4", "5"]
+  const trends = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 
   return (
     <div className = "sidebar">
@@ -16,13 +16,15 @@ const SideBar = () => {
             <hr className = "horizontal-line"></hr>
         </div>
 
-        {trends.map(
-            (data) => {return (<TrendCard 
-                key = {data}
-                report_id = {data} 
-                activeTrend = {activeTrend} 
-                setActiveTrend = {setActiveTrend}></TrendCard>)}
-        )}
+        <div className = "scroll-container">
+          {trends.map(
+              (data) => {return (<TrendCard 
+                  key = {data}
+                  trend_id = {data} 
+                  activeTrend = {activeTrend} 
+                  setActiveTrend = {setActiveTrend}></TrendCard>)}
+          )}
+        </div>
     </div>
   )
 }
