@@ -111,7 +111,7 @@ def linear_regression(coords, times, time):
     # print(f"Predicted x: {predicted_x_pos}")
     # print(f"Predicted y: {predicted_y_pos}")
 
-    return [[predicted_x_pos, predicted_y_pos], [end_x, end_y]]
+    return [[predicted_x_pos, predicted_y_pos], [end_x, end_y], [start_x, start_y]]
 
 def main():
     x = [9.8, 3.8, 6.0, 0.9, 5.4, 1.4, 16.2, 19.5, 2.1, 0.94, 43.80, 3.9, 1.7]
