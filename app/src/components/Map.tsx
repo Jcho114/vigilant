@@ -1,4 +1,4 @@
-import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet";
+import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import "./Map.css";
 import Leaflet from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -55,7 +55,16 @@ const Map = ({ reports, name, lat, long, setLat, setLong }: any) => {
         />
         <GetCoords setLat={setLat} setLong={setLong} />
         {reports.map((el: Report) => 
-          <Marker key={el.report_id} position={[el.latitude, el.longitude]}></Marker>
+          <Marker key={el.report_id} position={[el.latitude, el.longitude]}>
+            <Popup className="popup">
+              <h1>{el.unit.toUpperCase()} ({el.amount} {el.amount === 1 ? "Unit" : "Units"})</h1>
+              <h2>Coordinates:</h2>
+              <h2>{`[${el.latitude}, ${el.longitude}]`}</h2>
+              <h2>Verified: {el.validation ? "TRUE" : "FALSE"}</h2>
+              <h2>Description: {el.description}</h2>
+              <h2>Date: {String(new Date(el.date))}</h2>
+            </Popup>
+          </Marker>
         )}
         <Marker position={[lat, long]} icon={selected}></Marker>
       </MapContainer>
