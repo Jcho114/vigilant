@@ -1,4 +1,4 @@
-import Map from '../components/Map'
+import TrendMap from '../components/trends/TrendMap'
 import AdminNavBar from '../components/AdminNavBar'
 import SideBar from '../components/trends/SideBar'
 
@@ -12,8 +12,12 @@ const AdminTrends = () => {
 
         <div className="content">
             <SideBar />
+<<<<<<< Updated upstream
             <Map name = {"minimap"}/>
             <TrendForm />
+=======
+            <TrendMap name = {"minimap"}/>
+>>>>>>> Stashed changes
         </div>
     </div>
   )
