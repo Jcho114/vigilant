@@ -13,8 +13,6 @@ const AdminDashboard = () => {
       <div className="content">
         <AdminSideBar page = {pageState}/>
           {pageState === "Reports" ? <AdminReports /> : null}
-          {/* {page === "Trends" ? <div>Admin Trends</div> : null}
-          {page === "Archived" ? <div>Admin Settings</div> : null} */}
       </div>
     </div>
   )
