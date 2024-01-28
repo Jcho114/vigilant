@@ -15,27 +15,6 @@ const ReportForm = ({lat, long}: {lat: number, long: number}) => {
 
   if (isLoading) return "Loading...";
 
-  const addReport = async (accessToken: string, unit_type: string, unit_amount: number) => {
-    return await fetch(`${import.meta.env.VITE_REACT_APP_API_SERVER_URL}/api/v1/report/add`, {
-      method: "POST",
-      body: JSON.stringify({
-        validation: false,
-        latitude: lat,
-        longitude: long,
-        type: type,
-        unit: unit_type,
-        amount: unit_amount,
-        date: new Date(),
-        description: description,
-        image: null
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${accessToken}`,
-      }
-    }).then(async (res) => (await res.clone().json()).new_report).catch(error => console.error(error));
-  }
-
   const addReportToUserList = async (id: string) => {
     await fetch(`${import.meta.env.VITE_REACT_APP_API_SERVER_URL}/api/v1/user/report`, {
       method: "PUT",
@@ -52,25 +31,33 @@ const ReportForm = ({lat, long}: {lat: number, long: number}) => {
   async function fileReports() {
     const accessToken = await getAccessTokenSilently({
       authorizationParams: {
-        audience: import.meta.env.VITE_REACT_APP_AUTH0_API_AUDIENCE
-      }
+        audience: import.meta.env.VITE_REACT_APP_AUTH0_API_AUDIENCE,
+      },
     });
-    if (tank > 0) {
-      const { report_id:tank_report_id } = await addReport(accessToken, "tank", tank);
-      await addReportToUserList(tank_report_id);
-    }
-    if (infantry > 0) {
-      const { report_id:infantry_report_id } = await addReport(accessToken, "infantry", infantry);
-      await addReportToUserList(infantry_report_id);
-    }
-    if (helicopter > 0) {
-      const { report_id:helicopter_report_id } = await addReport(accessToken, "helicopter", helicopter);
-      await addReportToUserList(helicopter_report_id);
-    }
-    if (plane > 0) {
-      const { report_id:plane_report_id } = await addReport(accessToken, "plane", plane);
-      await addReportToUserList(plane_report_id);
-    }
+    const { report_id } = await fetch(
+      `${import.meta.env.VITE_REACT_APP_API_SERVER_URL}/api/v1/report/add`,
+      {
+        method: "POST",
+        body: JSON.stringify({
+          validation: false,
+          latitude: lat,
+          longitude: long,
+          type: type,
+          tanks: tank,
+          infantry: infantry,
+          helicopters: helicopter,
+          planes: plane,
+          date: new Date(),
+          description: description,
+          image: null,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    ).then(async (res) => (await res.clone().json()).new_report).catch((error) => console.error(error));
+    await addReportToUserList(report_id);
     setType("info");
     setTanks(0);
     setInfantry(0);

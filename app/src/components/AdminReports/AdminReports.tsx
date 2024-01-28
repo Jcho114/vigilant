@@ -78,8 +78,10 @@ const AdminReports = () => {
     latitude: number,
     longitude: number,
     type: string,
-    unit: string,
-    amount: number,
+    tanks: number,
+    infantry: number,
+    helicopters: number,
+    planes: number,
     date: Date,
     description: string,
     image: string,
@@ -94,7 +96,8 @@ const AdminReports = () => {
             {reports.sort((a: Report, b: Report) => a.date > b.date ? -1 : 1).map((el: Report) => {
                 return <div key={el.report_id} className="admin-reports-card">
                     <h1><strong>Date:</strong> {(new Date(el.date)).toLocaleString()}</h1>
-                    <h1>Type: {el.type.toUpperCase()} Unit: {el.unit.toUpperCase()}</h1>
+                    <h1>Type: {el.type.toUpperCase()}</h1>
+                    <h1>Tanks: {el.tanks} Infantry: {el.infantry} Helicopters: {el.helicopters} Planes: {el.planes}</h1>
                     <h1>Descpription: {el.description}</h1>
                 </div>
             })}

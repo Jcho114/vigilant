@@ -30,8 +30,10 @@ type Report = {
   latitude: number,
   longitude: number,
   type: string,
-  unit: string,
-  amount: number,
+  tanks: number,
+  infantry: number,
+  helicopters: number,
+  planes: number,
   date: Date,
   description: string,
   image: string,
@@ -57,12 +59,15 @@ const Map = ({ reports, name, lat, long, setLat, setLong }: any) => {
         {reports.map((el: Report) => 
           <Marker key={el.report_id} position={[el.latitude, el.longitude]}>
             <Popup className="popup">
-              <h1>{el.unit.toUpperCase()} ({el.amount} {el.amount === 1 ? "Unit" : "Units"})</h1>
+              <h1>Date: {String(new Date(el.date).toLocaleString())}</h1>
               <h2>Coordinates:</h2>
               <h2>{`[${el.latitude}, ${el.longitude}]`}</h2>
               <h2>Verified: {el.validation ? "TRUE" : "FALSE"}</h2>
               <h2>Description: {el.description}</h2>
-              <h2>Date: {String(new Date(el.date))}</h2>
+              <h2>Tanks: {el.tanks}</h2>
+              <h2>Infantry: {el.infantry}</h2>
+              <h2>Helicopters: {el.helicopters}</h2>
+              <h2>Planes: {el.planes}</h2>
             </Popup>
           </Marker>
         )}
