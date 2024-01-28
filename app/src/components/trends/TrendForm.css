@@ -1,4 +1,4 @@
-.trendformcontainer {
+.trend-form-container {
     width: 42%;
     height: 25%;
     position: fixed;
@@ -7,7 +7,7 @@
     z-index: 2;
   }
   
-  .reportform {
+  .trend-form-reportform {
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -18,7 +18,7 @@
     color: white;
   }
   
-  .reportform .title {
+  .trend-form-reportform .title {
     width: 100%;
     background-color: #3A4B58;
     border-top-right-radius: inherit;
@@ -28,48 +28,48 @@
     padding: 0.3rem 0;
   }
   
-  .reportform .infotype {
+  .trend-form-reportform .infotype {
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
-  .reportform .infotype table, th, td {
+  .trend-form-reportform .infotype table, th, td {
     border-collapse: collapse;
     border: 1px white solid;
   }
   
-  .reportform .infotype td {
+  .trend-form-reportform .infotype td {
     text-align: center;
   }
   
-  .reportform .infotype table {
+  .trend-form-reportform .infotype table {
     margin: 1rem;
     width: 90%;
     height: 2rem;
   }
   
-  .reportform .reports h1 {
+  .trend-form-reportform .reports h1 {
     font-size: 1rem;
     margin: 0 1rem;
   }
   
-  .reportform .tank,
-  .reportform .infantry,
-  .reportform .helicopter,
-  .reportform .plane {
+  .trend-form-reportform .tank,
+  .trend-form-reportform .infantry,
+  .trend-form-reportform .helicopter,
+  .trend-form-reportform .plane {
     display: flex;
   }
   
-  .reportform .amounts {
+  .trend-form-reportform .amounts {
     margin-left: auto;
     margin-right: 5%;
   }
   
-  .reportform input[type="checkbox"] {
+  .trend-form-reportform input[type="checkbox"] {
     margin-right: 1rem;
   }
   
-  .reportform input[type="number"] {
+  .trend-form-reportform input[type="number"] {
     width: 4rem;
   }

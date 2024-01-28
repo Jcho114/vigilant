@@ -1,8 +1,7 @@
 import TrendMap from '../components/trends/TrendMap'
 import AdminNavBar from '../components/AdminNavBar'
-import SideBar from '../components/trends/SideBar'
+import TrendSideBar from '../components/trends/TrendSideBar'
 
-// Replace and Remove
 import TrendForm from '../components/trends/TrendForm'
 
 import {useState} from 'react'
@@ -20,7 +19,7 @@ const AdminTrends = () => {
         <AdminNavBar email = "adityashelke2014@gmail.com" />
 
         <div className="content">
-            <SideBar />
+            <TrendSideBar />
             <TrendMap name = {"minimap"} lat = {lat} setLat = {setLat} 
                       long = {long} setLong = {setLong} clickedMarkers = {clickedMarkers} 
                       setClickedMarkers = {setClickedMarkers} />

@@ -1,4 +1,4 @@
-import ReportCard from './ReportCard'
+import TrendReportCard from './TrendReportCard'
 import "./TrendForm.css";
 
 import {useState} from 'react'; 
@@ -9,16 +9,14 @@ const ReportForm = () => {
 
   return (
   
-  <div className="trendformcontainer">
-      <div className="reportform">
-        <div className="title">
+  <div className="trend-form-container">
+      <div className="trend-form-reportform">
+        <div className="trend-form-title">
           <h1>New Trend</h1>
         </div>
         
         {reportIds.map(
-            (data) => {return (<ReportCard key = {data} >
-
-            </ReportCard>)}
+            (data) => {return (<TrendReportCard key = {data} />)}
         )}
 
       </div>
