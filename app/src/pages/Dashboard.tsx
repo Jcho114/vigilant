@@ -69,7 +69,7 @@ const Dashboard = () => {
       <div className="content">
         <SideBar setReports={setReports} />
         <Map reports={reports} name={"minimap"} lat={lat} long={long} setLat={setLat} setLong={setLong} />
-        <ReportForm reports={reports} setReports={setReports} lat={lat} long={long} />
+        <ReportForm lat={lat} long={long} />
       </div>
     </div>
   )
