@@ -1,0 +1,26 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 92vh;
+  width: 20%;
+  justify-content: center;
+  background-color: #001c32;
+}
+.sidebar-item {
+  background-color: #aaaaaa;
+  color: #ffffff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 80%;
+  height: 10vh;
+  border-radius: 10px;
+}
+.sidebar-item-active {
+  background-color: #3a4b58;
+  color: #aaaaaa;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 80%;
+  height: 10vh;
+  border-radius: 10px;
+}
