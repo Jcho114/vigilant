@@ -11,3 +11,41 @@
     height: auto; 
     background-color: #99B5CB; 
 }
+
+.trend-card-title {
+    font-size: 20px;
+    padding-top: 5px;
+    padding-left: 10px;
+    font-weight: 600;
+}
+
+.trend-card-horizontal {
+    height: 3px; 
+    margin-left: 6px;
+    margin-right: 30px;
+    border-width: 0px;
+    background-color: white; 
+}
+
+.trend-card-creation-date {
+    font-size: 14px;
+    padding-top: 5px;
+    padding-left: 10px;
+    font-weight: 600;
+}
+
+.trend-card-time-period {
+    font-size: 14px;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+.active-report-window {
+
+}
+
+.inactive-report-window {
+    display: none;
+}
