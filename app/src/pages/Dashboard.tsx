@@ -5,8 +5,11 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { useQuery } from '@tanstack/react-query';
 import './Dashboard.css';
 import SideBar from '../components/SideBar';
+import { useState } from 'react';
 
 const Dashboard = () => {
+  const [lat, setLat] = useState<number>(0);
+  const [long, setLong] = useState<number>(0);
   const { isLoading, isAuthenticated, user, getAccessTokenSilently } = useAuth0();
 
   const { isPending, error, data } = useQuery({
@@ -57,8 +60,8 @@ const Dashboard = () => {
       <CivilianNavBar email={user ? String(user.email) : ""}/>
       <div className="content">
         <SideBar />
-        <Map name={"minimap"}/>
-        <ReportForm />
+        <Map name={"minimap"} lat={lat} long={long} setLat={setLat} setLong={setLong} />
+        <ReportForm lat={lat} long={long} />
       </div>
     </div>
   )

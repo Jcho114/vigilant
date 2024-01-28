@@ -2,11 +2,12 @@ const mongoose = require("mongoose");
 
 // creating schema
 const reportSchema = new mongoose.Schema({
-    report_id: mongoose.Schema.Types.UUID,
+    report_id: String,
     validation: Boolean,
     latitude: Number,
     longitude: Number,
     type: String,
+    unit: String,
     amount: Number,
     date: Date,
     description: String,
