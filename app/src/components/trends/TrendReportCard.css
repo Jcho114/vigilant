@@ -1,8 +1,13 @@
 .trend-report-card {
     width: 80%; 
-    height: auto; 
+    height: 32px; 
+    background-color: #D9D9D9; 
+    margin-left: 20px; 
+    margin-top: 15px;
 }
 
 .trend-report-card-title {
-    
+    padding-left: 5px;
+    padding-top: 5px;
+    color: black;
 }

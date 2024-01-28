@@ -3,21 +3,24 @@ import "./TrendForm.css";
 
 import {useState} from 'react'; 
 
-const ReportForm = () => {
-
-  const [reportIds, setReportids] = useState(["d", "e", "f", "g", "h"])
+const ReportForm = ({clickedMarkers} : {clickedMarkers : any}) => {
 
   return (
   
   <div className="trend-form-container">
       <div className="trend-form-reportform">
-        <div className="trend-form-title">
-          <h1>New Trend</h1>
+        <div className = "trend-form-header">
+          <p className="trend-form-title">New Trend</p>
+          <div className="trend-form-submit">Submit</div>
         </div>
         
-        {reportIds.map(
-            (data) => {return (<TrendReportCard key = {data} />)}
-        )}
+        <div className = "trend-form-scrollable-window">
+
+          {clickedMarkers.map(
+              (data : any) => {return (<TrendReportCard key = {data} report_id = {data}/>)}
+          )}
+        
+        </div>
 
       </div>
     </div>
