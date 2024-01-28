@@ -18,7 +18,7 @@ function App() {
     <>
       <NavBar email={user?.email}/>
       <div className="landing">
-        <h1 data-aos="fade-up">Vigilent</h1>
+        <h1 data-aos="fade-up">Vigilant</h1>
         <div data-aos="fade-up">
           {!isAuthenticated ? <LoginButton /> : <Link to="/dashboard"><button>Dashboard</button></Link>}
         </div>

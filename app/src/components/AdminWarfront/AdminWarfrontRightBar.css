@@ -1,0 +1,38 @@
+.admin-warfront-rightbar {
+  position: fixed;
+  bottom: 3rem;
+  right: 2rem;
+  width: 22%;
+  height: 65vh;
+  background-color: #001C32;
+  z-index: 1;
+  color: black;
+  border-radius: 1rem;
+}
+
+.admin-warfront-rightbar-title {
+  background-color: #394B58;
+  padding: 0.25rem 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  color: white;
+  text-align: center;
+  font-size: 0.7rem;
+}
+
+.admin-warfront-rightbar-selection {
+  margin-top: 1rem;
+  height: 75%;
+  overflow-y: auto;
+}
+
+.admin-warfront-rightbar-create {
+  display: flex;
+  justify-content: center;
+}
+
+.admin-warfront-rightbar-selection h1 {
+  margin-left: 0.8rem;
+  font-size: 0.8rem;
+  color: white;
+}
