@@ -1,6 +1,38 @@
 .admin-reports-filter-bar {
+  margin-left: auto;
+  margin-right: 0;
   width: 20%;
   height: 92vh;
   background-color: #d9d9d9;
   color: #000000;
+}
+
+.admin-reports-filter-bar-title {
+  margin: 1rem 0 0 1rem;
+}
+
+.admin-reports-filter-bar-title h1 {
+  font-size: 1.7rem;
+}
+
+.admin-reports hr {
+  background-color: #000000;
+  height: 1px;
+}
+
+.admin-reports-block {
+  margin: 0.4rem 0.8rem 0.8rem 0.8rem;
+}
+
+.admin-reports-block input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.admin-reports-block h1 {
+  font-size: 1.1rem;
+}
+
+.admin-reports-filter-button {
+  display: flex;
+  justify-content: center;
 }

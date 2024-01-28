@@ -1,8 +1,8 @@
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import "./Map.css";
-import Leaflet from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { useEffect } from "react";
+import Leaflet from "leaflet";
 
 const selected = new Leaflet.Icon({
   iconUrl: "../../public/red-icon.png",
