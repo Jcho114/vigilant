@@ -41,6 +41,9 @@ type Report = {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Map = ({ reports, name, lat, long, setLat, setLong }: any) => {
   console.log(reports);
+// add cluster or uninstall supercluster use-supercluster
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Map = ({ name, lat, long, setLat, setLong }: any) => {
   return (
     <>
       <MapContainer

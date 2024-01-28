@@ -2,8 +2,8 @@ import { useState } from "react";
 import "./ReportForm.css";
 import { useAuth0 } from "@auth0/auth0-react";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const ReportForm = ({lat, long}: any) => {
+// Change schema for types in reports
+const ReportForm = ({lat, long}: {lat: number, long: number}) => {
   const [type, setType] = useState<string>("info");
   const [tank, setTanks] = useState<number>(0);
   const [infantry, setInfantry] = useState<number>(0);
