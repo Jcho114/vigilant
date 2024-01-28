@@ -13,8 +13,6 @@
     width: 90%;
     height: 100%;
     background-color: #001C32;
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
     color: white;
   }
   
@@ -72,4 +70,38 @@
   
   .trend-form-reportform input[type="number"] {
     width: 4rem;
+  }
+  
+  .trend-form-header {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+  }
+  
+  .trend-form-title {
+    padding-top: 10px;
+    padding-left: 20px;
+    font-size: 25px;
+  }
+
+  .trend-form-submit {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    cursor: pointer; 
+    padding-left: 5px;
+    padding-right: 5px; 
+    border-radius: 5px;
+    font-size: 22px;
+    background-color: white; 
+    color: black; 
+  }
+
+  .trend-form-submit:hover {
+    background-color: grey; 
+    color: white; 
+  }
+
+  .trend-form-scrollable-window {
+    overflow-y: auto; 
   }

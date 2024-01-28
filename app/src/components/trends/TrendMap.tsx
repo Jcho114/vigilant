@@ -83,20 +83,20 @@ const AdminMap = ({ name, lat, setLat, long, setLong, clickedMarkers, setClicked
             (data) => {
               let lat = data[" latitude"];
               let long = data[" longitude"];
-              let _id = data["_id"]; 
+              let report_id = data["report_id"]; 
 
               return (
-                <Marker key = {_id} position = {[lat, long]} 
+                <Marker key = {report_id} position = {[lat, long]} 
 
-                icon = {iconColor(_id)}
+                icon = {iconColor(report_id)}
                 
                 eventHandlers = {{
                   click: () => {
-                    if (clickedMarkers.includes(_id)) {
-                      setClickedMarkers(clickedMarkers.filter((a : String) => a !== _id));
+                    if (clickedMarkers.includes(report_id)) {
+                      setClickedMarkers(clickedMarkers.filter((a : String) => a !== report_id));
                     }
                     else {
-                      setClickedMarkers([...clickedMarkers, _id])
+                      setClickedMarkers([...clickedMarkers, report_id])
                     }
                   }
                 }}
