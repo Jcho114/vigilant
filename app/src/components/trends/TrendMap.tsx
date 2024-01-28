@@ -4,6 +4,8 @@ import "leaflet/dist/leaflet.css";
 import { useEffect } from "react";
 import {useState} from 'react'; 
 
+import Leaflet from 'leaflet';
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const GetCoords = ({ setLat, setLong }: any) => {
   const map = useMap();
@@ -44,6 +46,25 @@ const AdminMap = ({ name, lat, setLat, long, setLong, clickedMarkers, setClicked
     displayReports()
   }, []);
 
+  const greyIcon = new Leaflet.Icon({
+    iconUrl: "../../public/grey-icon.png",
+    iconSize: [25, 40],
+  })
+
+  const redIcon = new Leaflet.Icon({
+    iconUrl: "../../public/red-icon.png",
+    iconSize: [25, 40],
+  });
+
+  const iconColor = (id : String) => {
+    if (clickedMarkers.includes(id)) {
+      return redIcon; 
+    }
+    else {
+      return greyIcon; 
+    }
+  }
+
   return (
     <>
       <MapContainer
@@ -64,15 +85,19 @@ const AdminMap = ({ name, lat, setLat, long, setLong, clickedMarkers, setClicked
               let long = data[" longitude"];
               let _id = data["_id"]; 
 
-
-
               return (
-                <Marker key = {_id} position = {[lat, long]}
+                <Marker key = {_id} position = {[lat, long]} 
+
+                icon = {iconColor(_id)}
                 
                 eventHandlers = {{
                   click: () => {
-                    console.log(lat); 
-                    
+                    if (clickedMarkers.includes(_id)) {
+                      setClickedMarkers(clickedMarkers.filter((a : String) => a !== _id));
+                    }
+                    else {
+                      setClickedMarkers([...clickedMarkers, _id])
+                    }
                   }
                 }}
                 
@@ -80,8 +105,6 @@ const AdminMap = ({ name, lat, setLat, long, setLong, clickedMarkers, setClicked
               )
             })
         }
-
-        <Marker position={[lat, long]}></Marker>
       </MapContainer>
     </>
   )
