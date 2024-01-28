@@ -23,6 +23,7 @@ app.use("/api/v1/summary", require("./modules/summary/summary.router"));
 app.use("/api/v1/trend", require("./modules/trend/trend.router"));
 app.use("/api/v1/user", require("./modules/user/user.router"));
 app.use("/api/v1/warfront", require("./modules/warfront/warfront.router"));
+app.use("/api/v1/predict", require("./utils/trend_prediction"));
 
 app.use((error, req, res, next) => {
     console.error(error.message);

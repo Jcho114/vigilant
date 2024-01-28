@@ -2,8 +2,9 @@ const express = require('express');
 const router = express.Router();
 const spawn = require('child_process').spawn;     
 
-router.get('/predict', (req, res) => {
-    const py = spawn('python', ['../../../utils/prediction.py'] );
+router.get('/', (req, res) => {
+    const py = spawn('python', ['./test.py'] );
+    // const py = spawn('python', ['../../../utils/prediction.py'] );
     
     let output = '';
     py.stdout.on("data", (data) => {
@@ -14,3 +15,4 @@ router.get('/predict', (req, res) => {
         res.sendStatus(200);
     });
 });
+module.exports = router;
