@@ -62,6 +62,22 @@ function convertResultsToCorrectFormat(reports) {
     return [x_coords, y_coords, times];
 }
 
+// function sortList(arr) {
+//     let rep_len = arr.length; 
+
+//     for (let i = 0; i < rep_len; i++) {
+//         for (let j = i + 1; j < rep_len; j++) {
+//             if (arr[j] < arr[i]) {
+//                 let temp = arr[i];
+//                 arr[i] = arr[j];
+//                 arr[j] = temp;
+//             }
+//         }
+//     }
+
+//     return arr;
+// }
+
 // convertDateToMinutes("2024-01-23 19:56:00.000000")
 // convertDateToMinutes("2024-01-20 19:56:00.000000")
 // convertDateToMinutes("2024-01-13 19:56:00.000000")
