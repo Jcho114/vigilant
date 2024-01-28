@@ -3,6 +3,7 @@ import AdminNavBar from '../components/AdminNavBar'
 import TrendSideBar from '../components/trends/TrendSideBar'
 
 import TrendForm from '../components/trends/TrendForm'
+import TrendSlider from '../components/trends/TrendSlider'
 
 import {useState} from 'react'
 
@@ -24,6 +25,8 @@ const AdminTrends = () => {
                       long = {long} setLong = {setLong} clickedMarkers = {clickedMarkers} 
                       setClickedMarkers = {setClickedMarkers} />
             <TrendForm clickedMarkers = {clickedMarkers}/>
+            <TrendSlider />
+
         </div>
     </div>
   )
