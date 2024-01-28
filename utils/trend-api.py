@@ -64,3 +64,7 @@ def polynomial_reg():
     y_coords = string_list_to_float(y_coords)
 
     return prediction.polynomial_regression([x_coords, y_coords])
+
+if __name__ == "__main__":
+    # 0.0.0.0 so its exposed to public
+    app.run(debug=True, host='0.0.0.0', port=3002)
