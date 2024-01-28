@@ -23,13 +23,10 @@ def linear_reg():
     if "," not in x_coords or "," not in y_coords or "," not in times:
         return 400
 
-    x_coords = x_coords.rsplit(",")
-    y_coords = y_coords.rsplit(",")
-    times = times.rsplit(",")
-
     x_coords = string_list_to_float(x_coords)
     y_coords = string_list_to_float(y_coords)
     times = string_list_to_float(times)
+
     coords = []
     size = len(x_coords)
 
@@ -42,6 +39,7 @@ def linear_reg():
 
 
 def string_list_to_float(string_num_list):
+    string_num_list = string_num_list.rsplit(",")
     string_num_list = [float(i) for i in string_num_list]
 
     return string_num_list
@@ -55,9 +53,6 @@ def polynomial_reg():
     # Bad request (Formatting issue)
     if "," not in x_coords or "," not in y_coords:
         return 400
-
-    x_coords = x_coords.rsplit(",")
-    y_coords = y_coords.rsplit(",")
 
     x_coords = string_list_to_float(x_coords)
     y_coords = string_list_to_float(y_coords)

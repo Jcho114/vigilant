@@ -16,6 +16,7 @@ Report {
     image: String,
 }
 """
+
 def gen_data():
     bools = ["true", "false"]
     types = ["danger", "warning", "info"]
