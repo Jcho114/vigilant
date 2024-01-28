@@ -1,0 +1,17 @@
+.active-admin-report-card {
+  margin-top: 20px;
+  width: 80%;
+  height: auto;
+  border-style: solid;
+}
+.inactive-admin-report-card {
+  margin-top: 20px;
+  width: 80%;
+  height: auto;
+  border-style: none;
+}
+.title {
+  font-family: "Open Sans";
+  font-size: 20px;
+  font-weight: 700; /* 600 is semibold 700 is bold */
+}
