@@ -13,8 +13,6 @@
     width: 90%;
     height: 100%;
     background-color: #001C32;
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
     color: white;
   }
   
@@ -72,4 +70,15 @@
   
   .trend-form-reportform input[type="number"] {
     width: 4rem;
+  }
+
+  .trend-form-title {
+    padding-top: 10px;
+    padding-left: 20px;
+    margin-bottom: 5px;
+    font-size: 25px;
+  }
+
+  .trend-form-scrollable-window {
+    overflow-y: auto; 
   }

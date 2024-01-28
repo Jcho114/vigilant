@@ -23,7 +23,7 @@ const AdminTrends = () => {
             <TrendMap name = {"minimap"} lat = {lat} setLat = {setLat} 
                       long = {long} setLong = {setLong} clickedMarkers = {clickedMarkers} 
                       setClickedMarkers = {setClickedMarkers} />
-            <TrendForm />
+            <TrendForm clickedMarkers = {clickedMarkers}/>
         </div>
     </div>
   )
