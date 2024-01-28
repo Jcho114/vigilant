@@ -1,6 +1,6 @@
 report_id, validation, latitude, longitude, type, tanks, infantry, helicopters, planes, date, description, image
-sadwaew, true, 49.2318, 32.8592, danger, 58, 0, 0, 0, 2024-01-22 19:56:00.000000, weawea, asdiwoa.png
-saewajewae, true, 49.5683, 33.1798, danger, 58, 0, 0, 0, 2024-01-23 19:56:00.000000, weajfw, saowoa.png
-sjawae, true, 49.7862, 33.5768, danger, 58, 0, 0, 0, 2024-01-24 19:56:00.000000, kslaoda, odsalwpz.png
-djawewa, true, 50.2391, 33.9887, danger, 58, 0, 0, 0, 2024-01-25 19:56:00.000000, walfos, mzxnjfa.png
-oqlsapea, true, 50.5839, 34.3648, danger, 58, 0, 0, 0, 2024-01-26 19:56:00.000000, zmanfa, asuweal.png
+sadwaew, false, 49.2318, 32.8592, danger, 58, 0, 0, 0, 2024-01-24 19:56:34.948827, weawea, asdiwoa.png
+saewajewae, false, 49.5683, 33.1798, danger, 58, 0, 0, 0, 2024-01-25 20:31:41.421492, weajfw, saowoa.png
+sjawae, false, 49.7862, 33.5768, danger, 58, 0, 0, 0, 2024-01-26 21:43:52.921842, kslaoda, odsalwpz.png
+djawewa, false, 50.2391, 33.9887, danger, 58, 0, 0, 0, 2024-01-27 22:33:43.894713, walfos, mzxnjfa.png
+oqlsapea, false, 50.5839, 34.3648, danger, 58, 0, 0, 0, 2024-01-28 03:53:21.347182, zmanfa, asuweal.png

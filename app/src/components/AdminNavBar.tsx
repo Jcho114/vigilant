@@ -34,10 +34,8 @@ const NavBar = ({ email }: { email: string }) => {
         <h1>Wartime Civilian</h1>
         <h1>Reporting Service</h1>
       </div>
-      <div className="misc-stuff">
-        <Link style={{ textDecoration: "none", color: "white" }} to="/admin-dashboard/trends"><h2>Trends</h2></Link>
-        <Link style={{ textDecoration: "none", color: "white" }} to="/admin-dashboard/reports"><h2>Reports</h2></Link>
-        <Link style={{ textDecoration: "none", color: "white" }} to="/admin-dashboard/warfront"><h2>Warfront</h2></Link>
+      <div>
+        
       </div>
       {userMenu ? <UserMenu /> : null}
       <div className="email" onClick={() => setUserMenu(!userMenu)}>
