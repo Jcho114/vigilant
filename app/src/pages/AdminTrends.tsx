@@ -12,12 +12,8 @@ const AdminTrends = () => {
 
         <div className="content">
             <SideBar />
-<<<<<<< Updated upstream
-            <Map name = {"minimap"}/>
-            <TrendForm />
-=======
             <TrendMap name = {"minimap"}/>
->>>>>>> Stashed changes
+            <TrendForm />
         </div>
     </div>
   )
