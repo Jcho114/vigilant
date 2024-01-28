@@ -1,10 +1,11 @@
 import Filter from './Filter';
 import './SideBar.css';
 
-const SideBar = () => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const SideBar = ({setReports}: any) => {
   return (
     <div className="sidebar">
-      <Filter />
+      <Filter setReports={setReports} />
     </div>
   )
 }

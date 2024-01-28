@@ -1,8 +1,18 @@
 const reportService = require("./report.service");
 
 const getReports = async (req, res) => {
-    // 200 = OK
-    res.status(200).json(await reportService.getReports(req.query));
+    if (req.query.start && req.query.end && req.query.validation) {
+        res.status(200).json(await reportService.getReports({
+            date: {
+                $gte: req.query.start,
+                $lte: req.query.end
+            },
+            validation: req.query.validation
+        }));
+    } else {
+        // 200 = OK
+        res.status(200).json(await reportService.getReports(req.query));
+    }
 }
 
 const addReport = async (req, res) => {

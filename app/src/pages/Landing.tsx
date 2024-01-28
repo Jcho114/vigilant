@@ -1,28 +1,29 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from "../components/LoginButton";
 import './Landing.css';
+import NavBar from "../components/CivilianNavBar";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
+
+Aos.init();
 
 function App() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { isAuthenticated }: any = useAuth0();
+  const { isLoading, isAuthenticated, user }: any = useAuth0();
+
+  if (isLoading) return "Loading..."
 
   return (
-    <div className="landing">
-      <div className="topnav">
-        <div className="topnav-left">
-          <a href="#home">Vigilant | Wartime Civilian Reporting Services</a>
-        </div>
-
-        <div className="topnav-right">
-          <a href="#signup">Sign up</a>
-          <a href="#signin">Sign in</a>
-          <a href="#support">Support</a>
+    <>
+      <NavBar email={user?.email}/>
+      <div className="landing">
+        <h1 data-aos="fade-up">Vigilent</h1>
+        <div data-aos="fade-up">
+          {!isAuthenticated ? <LoginButton /> : <Link to="/dashboard"><button>Dashboard</button></Link>}
         </div>
       </div>
-
-      {!isAuthenticated ? <LoginButton /> : null}
-    </div>
-    
+    </>
   )
 }
 

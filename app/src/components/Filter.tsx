@@ -1,28 +1,26 @@
-import { useQuery } from '@tanstack/react-query';
 import './Filter.css';
 import { useState } from "react";
 
-const Filter = () => {
-  const [location, setLocation] = useState<string>("");
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Filter = ({ setReports }: any) => {
+  const [, setLocation] = useState<string>("");
+  const [startDate, setStartDate] = useState<string>("");
   const [startTime, setStartTime] = useState<string>("");
+  const [endDate, setEndDate] = useState<string>("");
   const [endTime, setEndTime] = useState<string>("");
-  const [federal, setFederal] = useState<boolean>(false);
-  const [local, setLocal] = useState<boolean>(false);
-  const [unverified, setUnverified] = useState<boolean>(false);
+  const [verified, setVerified] = useState<boolean>(false);
 
-  console.log(location, startTime, endTime, federal, local, unverified)
-
-  const { isPending, error, data } = useQuery({
-    queryKey: [""],
-    queryFn: async () => {
-      // Add later
-      return "";
+  async function startFilter() {
+    let url;
+    if (startDate !== "" && startTime !== "" && endDate !== "" && endTime !== "") {
+      url = `${import.meta.env.VITE_REACT_APP_API_SERVER_URL}/api/v1/report?start=${startDate + startTime}&end=${endDate + endTime}&validation=${verified}`
+    } else {
+      url = `${import.meta.env.VITE_REACT_APP_API_SERVER_URL}/api/v1/report?validation=${verified}`
     }
-  });
-
-  if (isPending) return "Loading...";
-
-  if (error) return `Error: ${error}`;
+    const reports = await fetch(url)
+                            .then(res => res.json());
+    setReports(reports);
+  }
 
   return (
     <div className="filter">
@@ -31,28 +29,29 @@ const Filter = () => {
       </div>
       <hr />
       <div className="block location-region">
-        <h1>Location / Region</h1>
-        <select onChange={(e) => setLocation(e.target.value)}>
+        <h1>Location / Region (TBD)</h1>
+        <select disabled={true} onChange={(e) => setLocation(e.target.value)}>
           {null /* Render this via frontend next */}
         </select>
       </div>
       <div className="block timeline">
-        <h1>Timeline</h1>
+        <h1>Start Date & Time</h1>
         <div className="timeline-ui">
-          <input type="text" maxLength={4} onBlur={(e) => setStartTime(e.target.value)}/>
-          <h3>--</h3>
-          <input type="text" maxLength={4} onBlur={(e) => setEndTime(e.target.value)}/>
+          <input type="date" onChange={(e) => setStartDate(e.target.value)}/>
+          <input type="time" onChange={(e) => setStartTime(`T${e.target.value}:00`)}/>
+        </div>
+        <h1>End Date & Time</h1>
+        <div className="timeline-ui">
+          <input type="date" onChange={(e) => setEndDate(e.target.value)}/>
+          <input type="time" onChange={(e) => setEndTime(`T${e.target.value}:00`)}/>
         </div>
       </div>
       <div className="block status">
         <h1>Status</h1>
-        <input type="checkbox" onClick={() => setFederal(!federal)} id="federal"/>
-        <label htmlFor="federal">Federal Validated Reports</label><br/>
-        <input type="checkbox" onClick={() => setLocal(!local)} id="local"/>
-        <label htmlFor="local">Local Gov. Validated Reports</label><br/>
-        <input type="checkbox" onClick={() => setUnverified(!unverified)} id="unverified"/>
-        <label htmlFor="unverified">Unverified (Civilian) Reports</label><br/>
+        <input type="checkbox" onClick={() => setVerified(!verified)} id="unverified"/>
+        <label htmlFor="unverified">Verified (Civilian) Reports</label><br/>
       </div>
+      <button style={{marginBottom: "1rem", fontSize: "0.85rem"}} onClick={() => startFilter()}>Filter</button>
       <hr />
     </div>
   )

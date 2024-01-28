@@ -2,8 +2,8 @@ import { useState } from "react";
 import "./ReportForm.css";
 import { useAuth0 } from "@auth0/auth0-react";
 
-// Change schema for types in reports
-const ReportForm = ({lat, long}: {lat: number, long: number}) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const ReportForm = ({lat, long}: any) => {
   const [type, setType] = useState<string>("info");
   const [tank, setTanks] = useState<number>(0);
   const [infantry, setInfantry] = useState<number>(0);
@@ -77,6 +77,7 @@ const ReportForm = ({lat, long}: {lat: number, long: number}) => {
     setHelicopters(0);
     setPlanes(0);
     setDescription("");
+    window.location.reload();
   }
 
   return (
@@ -112,7 +113,7 @@ const ReportForm = ({lat, long}: {lat: number, long: number}) => {
               <input type="checkbox" checked={infantry !== 0} onClick={() => {
                 if (infantry !== 0) setInfantry(0);
               }}/>
-              # <input value={infantry} type="number" min={0} onChange={(e) => setInfantry(Number(e.target.value))}/>
+              # <input value={infantry} type="number" step={10} min={0} onChange={(e) => setInfantry(Number(e.target.value))}/>
             </div>
           </div>
           <div className="helicopter">
