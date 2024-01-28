@@ -45,10 +45,11 @@
   position: absolute;
   top: 8vh;
   right: 0;
-  background-color: white;
+  background-color: #C0C0C0;
   width: 13rem;
-  height: 30%;
+  height: 20%;
   z-index: 2;
+  padding-top: 0.2rem;
   color: black;
   display: flex;
   flex-direction: column;
@@ -58,7 +59,7 @@
 }
 
 .navbar .user-menu-block {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -72,5 +73,5 @@
 
 .navbar .user-menu .logout {
   margin-bottom: 1rem;
-  margin-top: auto;
+  padding-top: 0.5rem;
 }

@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 // creating schema
 const trendSchema = new mongoose.Schema({
-    reports: [mongoose.Schema.Types.UUID]
+    reports: [String]
 });
 
 // compiling model

@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
     location: String,
     phone: String,
     date_registered: Date,
-    reports: [mongoose.Schema.Types.UUID],
+    reports: [String],
     validated_reports: Number
 });
 

@@ -1,6 +1,9 @@
-import Map from '../components/Map'
+import TrendMap from '../components/trends/TrendMap'
 import AdminNavBar from '../components/AdminNavBar'
 import SideBar from '../components/trends/SideBar'
+
+// Replace and Remove
+import TrendForm from '../components/trends/TrendForm'
 
 const AdminTrends = () => {
   return (
@@ -9,7 +12,8 @@ const AdminTrends = () => {
 
         <div className="content">
             <SideBar />
-            <Map name = {"minimap"}/>
+            <TrendMap name = {"minimap"}/>
+            <TrendForm />
         </div>
     </div>
   )

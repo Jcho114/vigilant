@@ -23,3 +23,12 @@
   width: 100%;
   height: 5px;
 }
+
+.scroll-container {
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  width: 90%;
+}
