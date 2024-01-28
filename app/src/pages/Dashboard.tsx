@@ -5,12 +5,20 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { useQuery } from '@tanstack/react-query';
 import './Dashboard.css';
 import SideBar from '../components/SideBar';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Dashboard = () => {
   const [lat, setLat] = useState<number>(0);
   const [long, setLong] = useState<number>(0);
+  const [reports, setReports] = useState([]);
   const { isLoading, isAuthenticated, user, getAccessTokenSilently } = useAuth0();
+
+  useEffect(() => {
+    async function action() {
+      setReports(await fetch(`${import.meta.env.VITE_REACT_APP_API_SERVER_URL}/api/v1/report`).then(res => res.json()));
+    }
+    action();
+  }, []);
 
   const { isPending, error, data } = useQuery({
     queryKey: ['user'],
@@ -59,9 +67,9 @@ const Dashboard = () => {
     <div className="dashboard">
       <CivilianNavBar email={user ? String(user.email) : ""}/>
       <div className="content">
-        <SideBar />
-        <Map name={"minimap"} lat={lat} long={long} setLat={setLat} setLong={setLong} />
-        <ReportForm lat={lat} long={long} />
+        <SideBar setReports={setReports} />
+        <Map reports={reports} name={"minimap"} lat={lat} long={long} setLat={setLat} setLong={setLong} />
+        <ReportForm reports={reports} setReports={setReports} lat={lat} long={long} />
       </div>
     </div>
   )

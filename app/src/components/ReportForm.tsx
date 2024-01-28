@@ -77,6 +77,7 @@ const ReportForm = ({lat, long}: {lat: number, long: number}) => {
     setHelicopters(0);
     setPlanes(0);
     setDescription("");
+    window.location.reload();
   }
 
   return (
@@ -112,7 +113,7 @@ const ReportForm = ({lat, long}: {lat: number, long: number}) => {
               <input type="checkbox" checked={infantry !== 0} onClick={() => {
                 if (infantry !== 0) setInfantry(0);
               }}/>
-              # <input value={infantry} type="number" min={0} onChange={(e) => setInfantry(Number(e.target.value))}/>
+              # <input value={infantry} type="number" step={10} min={0} onChange={(e) => setInfantry(Number(e.target.value))}/>
             </div>
           </div>
           <div className="helicopter">
